@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ArticleItem">
+
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/backicon"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:paddingBottom="80dp"
+        android:clipToPadding="false"
+        android:background="@drawable/dynamicarticlebg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="7dp"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="50dp"
+            android:scrollbarThumbVertical="@color/primaryText"
+            android:scrollbarStyle="outsideOverlay">
+
+            <TextView
+                android:id="@+id/newtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This is the Title"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textSize="30sp"
+                android:textColor="@color/primaryText"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="9dp"/>
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:paddingLeft="30dp"
+                android:paddingBottom="25dp"
+                android:textColor="@color/secondaryText"
+                android:fontFamily="@font/montserrat_reg"
+                android:text="5 minute read"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="270dp"
+                android:layout_height="150dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginStart="25dp">
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@color/secondaryText"/>
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/montserrat_reg"
+                android:padding="27dp"
+                android:text="SINGAPORE — A young boy had allegedly stolen a private bus and somehow managed to drive it around the northeastern part of Singapore for about five hours on Wednesday (12 April), covering about 100 kilometres before police found and stopped his joyride.\n\nPhotos and information of the alleged &quot;bus-jacking&quot; were circulating on social media, with one of them showing the boy being surrounded by police officers.\n\nSome social media accounts on Instagram and Facebook alleged that the boy had damaged the exterior of the bus and eventually abandoned it, having used about a quarter tank of diesel. He was said to have driven the bus around Tampines, Pasir Ris, Bedok and Punggol.\n\nPolice confirmed the incident, saying in a statement to Yahoo Southeast Asia, &quot;On 12 April at 12.04pm, the Police were alerted to a case of theft of a motor vehicle along Tampines Avenue 10. &quot;"
+                android:textColor="@color/primaryText"
+                android:textSize="14sp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/quizWrapper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="110dp"
+                android:paddingBottom="30dp"
+                android:background="@drawable/rounded_card"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="Done? Let's try the quiz out!"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textColor="@color/primaryText"
+                    android:textSize="12sp"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/light_icon"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="55dp"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="end"
+        android:elevation="10dp"
+        android:layout_alignEnd="@+id/scrollview"
+        android:layout_alignBottom="@id/scrollview"
+        android:paddingRight="15dp">
+
+        <CheckBox
+            android:id="@+id/bookmark"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bookmark_icon"
+            android:button="@null"
+            android:padding="15dp"
+            android:paddingRight="10dp" />
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="30dp"
+            android:layout_weight="0.8"
+            android:background="@drawable/ellipse_bg"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/share" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "277502123108",
+    "firebase_url": "https://dementiaapp-3bdc5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "dementiaapp-3bdc5",
+    "storage_bucket": "dementiaapp-3bdc5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:277502123108:android:2ed05b807e1a061d105371",
+        "android_client_info": {
+          "package_name": "com.nicholasandyenchik.Firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "277502123108-puvak57mcimqm1tsa7bqlvst181ec0k5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nicholasandyenchik.Firebase",
+            "certificate_hash": "27e87f3b3d5068c901787564fd9cd043982d1d7d"
+          }
+        },
+        {
+          "client_id": "277502123108-psi6ufjjnm0a8pjg64afhpmn0n99khk9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSjCuaF_uYWuYCgeV_LiPfkvHJwyvYICQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "277502123108-da3cknj4srn0gpjr1nmik3h36obh1mvk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

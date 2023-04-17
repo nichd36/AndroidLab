@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="25dp"
+    android:background="@drawable/edittext_rounded_bg"
+    tools:context=".AccountSettings">
+
+    <ImageView
+        android:id="@+id/backbtn"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_margin="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/grey_cross"
+        android:elevation="9dp"/>
+
+    <TextView
+        android:id="@+id/accsetting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="40dp"
+        android:singleLine="false"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Account Settings"
+        android:textColor="@color/primaryText"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backbtn" />
+
+    <LinearLayout
+        android:id="@+id/profilewrapper"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        android:gravity="left"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/accsetting"
+
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/img" />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Nicholas Wong"
+            android:textColor="@color/primaryText"
+            android:textSize="20sp"
+            android:autoSizeTextType="uniform"
+            app:layout_constraintStart_toEndOf="@+id/profile"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginStart="300dp"
+        android:layout_height="0dp"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@color/grey"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/optionswrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingBottom="15dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/editprofilewrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingRight="25dp"
+                app:layout_constraintTop_toBottomOf="@+id/profilewrapper">
+
+                <ImageView
+                    android:id="@+id/editprofileicon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:srcCompat="@drawable/pencil_icon" />
+
+                <TextView
+                    android:id="@+id/editprofile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/montserrat_reg"
+                    android:text="Edit username"
+                    android:textColor="@color/primaryText"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toBottomOf="@+id/setting" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/privacywrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:paddingRight="25dp"
+                app:layout_constraintTop_toBottomOf="@+id/editprofilewrapper">
+
+                <ImageView
+                    android:id="@+id/privacyicon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:srcCompat="@drawable/lock_icon" />
+
+                <TextView
+                    android:id="@+id/privacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/montserrat_reg"
+                    android:text="Change password"
+                    android:textColor="@color/primaryText"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toBottomOf="@+id/setting" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/invitefriendwrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="25dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintTop_toBottomOf="@+id/privacywrapper">
+
+                <ImageView
+                    android:id="@+id/invitefriendicon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:srcCompat="@drawable/chain_icon" />
+
+                <TextView
+                    android:id="@+id/invitefriend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/montserrat_reg"
+                    android:text="Invite friend"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/primaryText"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toBottomOf="@+id/setting" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/signoutwrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="25dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintTop_toBottomOf="@+id/invitefriendwrapper">
+
+                <ImageView
+                    android:id="@+id/signouticon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:srcCompat="@drawable/door_icon" />
+
+                <TextView
+                    android:id="@+id/signout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Sign out"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/red"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

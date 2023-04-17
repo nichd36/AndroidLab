@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/editnamescreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfile"
+    android:background="@color/bgDynamic"
+    >
+
+    <TextView
+        android:id="@+id/setupProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Edit Username"
+        android:textColor="@color/primaryText"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cancel" />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/montserrat_reg"
+        android:text="Would like to update your username? You are in the right place! Any character including symbols are accepted"
+        android:textColor="@color/primaryText"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/setupProfile" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:padding="15dp"
+        android:background="@drawable/edittext_rounded_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@color/primaryText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc" />
+
+
+    <TextView
+        android:id="@+id/username2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/editName"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentStart="true"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="New username"
+        android:textColor="@color/secondaryText" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Save"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:backgroundTint="@null"
+        android:textColor="@color/black"
+        android:background="@drawable/border_clicked"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="cancel"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:backgroundTint="@null"
+        android:textColor="@color/secondaryText"
+        android:textSize="10sp"
+        android:background="@drawable/border_unclicked"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

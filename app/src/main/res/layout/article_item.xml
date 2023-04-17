@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ArticleListRVAdapter"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    app:cardCornerRadius="30dp"
+    android:background="@color/black"
+    android:padding="10dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="10dp">
+
+    <com.bosphere.fadingedgelayout.FadingEdgeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/black"
+        app:fel_edge="bottom"
+        app:fel_size_bottom="400dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_launcher_background"/>
+
+        <ImageView
+            android:id="@+id/darkenBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:src="@color/transparentDark"/>
+    </com.bosphere.fadingedgelayout.FadingEdgeLayout>
+
+    <LinearLayout
+        android:id="@+id/articleHolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="bottom"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="left"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textColor="@color/white"
+            android:shadowRadius="0.3"
+            android:shadowColor="@color/black"
+            android:text="Title"/>
+
+   <TextView
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="15dp"
+        android:text="Not Done"
+        android:fontFamily="@font/montserrat_bold"
+        android:textAllCaps="true"
+        android:textColor="@color/red"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/Quiz"
+        app:layout_constraintTop_toBottomOf="@+id/article" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

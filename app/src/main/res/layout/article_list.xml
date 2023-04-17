@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListOfArticles"
+    android:background="@color/bgDynamic">
+
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/backicon"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <com.bosphere.fadingedgelayout.FadingEdgeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="15dp"
+        app:fel_edge="left|right"
+        app:fel_size_left="3dp"
+        app:fel_size_right="3dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textSize="25sp"
+            android:textColor="@color/primaryText"
+            android:text="Title here, supposed to can scroll one"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"/>
+
+    </com.bosphere.fadingedgelayout.FadingEdgeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="65dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/progress_bar"
+        android:tooltipText="1 out of 4"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+    </ProgressBar>
+
+    <TextView
+        android:id="@+id/done"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/progress"
+        android:layout_alignStart="@+id/progress"
+        android:layout_alignEnd="@+id/progress"
+        android:layout_alignTop="@+id/progress"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/primaryText"
+        android:shadowColor="@color/bgDynamic"
+        android:shadowRadius="3"
+        android:text="1 out 5 done"/>
+
+    <com.bosphere.fadingedgelayout.FadingEdgeLayout
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:fel_edge="top"
+        app:fel_size_top="10dp"
+        android:background="@drawable/dynamicarticlebg"
+        android:elevation="0dp">
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/articleList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            android:isScrollContainer="false"
+            android:paddingBottom="15dp"
+            android:clipToPadding="false">
+        </androidx.recyclerview.widget.RecyclerView>
+    </com.bosphere.fadingedgelayout.FadingEdgeLayout>
+
+</RelativeLayout>

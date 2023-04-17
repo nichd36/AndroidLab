@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="green_neon">#0CFF00</color>
+    <color name="blue">#00A0FF</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
+
+    <color name="grey">#D9D9D9</color>
+    <color name="extradark_grey">#434343</color>
+    <color name="mint_green">#9EE7DE</color>
+
+    <color name="quizBg">#F1F1F1</color>
+    <color name="bgArticle">#FFF4E7</color>
+    <color name="bgDynamic">#FFFFFFFF</color>
+
+    <color name="primaryText">#FF000000</color>
+    <color name="secondaryText">#666666</color>
+    <color name="headings1">#F2F2F2</color>
+    <color name="headings2">#ECECEC</color>
+    <color name="headings3">#E4E4E4</color>
+
+    <color name="transparentDark">#80000000</color>
+    <color name="searchbar">#F1F1F1</color>
+    <color name="fadeBg">#2A2A2A</color>
+    <color name="quizHomepage">#9EE7DE</color>
+    <color name="greenbar">#9EE7DE</color>
+
+    <color name="bg_icon">#2596be</color>
+</resources>

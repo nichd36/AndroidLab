@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">DementiaLearn</string>
+
+    <string name="signup">SIGN UP</string>
+    <string name="signin">SIGN IN</string>
+    <string name="username">Username</string>
+    <string name="email">E-mail</string>
+    <string name="newpass">New password</string>
+    <string name="reenterpass">Re-enter password</string>
+
+    <string name="haveaccountask">Already have an account?</string>
+    <string name="donthaveaccountask">Don’t have an account?</string>
+
+    <string name="forgot_pass">FORGOT YOUR PASSWORD?</string>
+    <string name="forgot_pass_details">Do not worry, kindly fill out your email first. We will email you the password.</string>
+    <string name="change_pass">CHANGE PASSWORD</string>
+    <string name="change_pass_details">Please fill out your old password</string>
+    <string name="old_pass">  Current password</string>
+
+</resources>
