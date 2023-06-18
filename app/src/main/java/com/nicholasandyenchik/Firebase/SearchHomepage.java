@@ -114,42 +114,55 @@ public class SearchHomepage extends AppCompatActivity {
     }
     private void setData()
     {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        dbRef = FirebaseDatabase.getInstance().getReference("Category_Information");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<MainTopic> categoryArrayList = new ArrayList<>();
+                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+                    MainTopic category = snapshot1.getValue(MainTopic.class);
+                    categoryArrayList.add(category);
+                }
 
-        articleItemArrayList.clear();
-        for(int i = 0; i<3; i++){
-            if(i == 0){
-                dbRef = FirebaseDatabase.getInstance().getReference("Category_Information/Communicating/article");
-            }else if(i == 1){
-                dbRef = FirebaseDatabase.getInstance().getReference("Category_Information/Dealing/article");
-            }else if(i == 2){
-                dbRef = FirebaseDatabase.getInstance().getReference("Category_Information/Symptoms/article");
+                articleItemArrayList.clear();
+                for(int i = 0; i<categoryArrayList.size(); i++){
+                    String PATH = "";
+                    PATH = "Category_Information/Chapter " + i + "/article";
+                    dbRef = FirebaseDatabase.getInstance().getReference(PATH);
+
+                    dbRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for(DataSnapshot snapshot1: snapshot.getChildren()){
+                                ArticleItem articleItem = snapshot1.getValue(ArticleItem.class);
+                                articleItemArrayList.add(articleItem);
+
+                                DataSnapshot snapshot2 = snapshot1.child("quiz");
+                                Long count = snapshot2.getChildrenCount();
+                                countArrayList.add(count);
+                            }
+                            ArticleListRVAdapter adapter = new ArticleListRVAdapter(SearchHomepage.this, articleItemArrayList, scoreListArrayList, countArrayList);
+                            articleListRV.setAdapter(adapter);
+                            adapter.notifyDataSetChanged();
+                            loading.setVisibility(View.GONE);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(SearchHomepage.this, "Error occured, please report this to the developer", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+
             }
 
-            dbRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    for(DataSnapshot snapshot1: snapshot.getChildren()){
-                        ArticleItem articleItem = snapshot1.getValue(ArticleItem.class);
-                        articleItemArrayList.add(articleItem);
+            @Override
+            public void onCancelled(@androidx.annotation.NonNull DatabaseError databaseError) {
 
-                        DataSnapshot snapshot2 = snapshot1.child("quiz");
-                        Long count = snapshot2.getChildrenCount();
-                        countArrayList.add(count);
-                    }
-                    ArticleListRVAdapter adapter = new ArticleListRVAdapter(SearchHomepage.this, articleItemArrayList, scoreListArrayList, countArrayList);
-                    articleListRV.setAdapter(adapter);
-                    adapter.notifyDataSetChanged();
-                    loading.setVisibility(View.GONE);
-                }
+            }
+        });
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    Toast.makeText(SearchHomepage.this, "Error occured, please report this to the developer", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference score = FirebaseDatabase.getInstance().getReference("User/" + user.getUid() + "/progress");
 
         score.addValueEventListener(new ValueEventListener() {

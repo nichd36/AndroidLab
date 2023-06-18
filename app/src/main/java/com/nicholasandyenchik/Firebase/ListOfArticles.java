@@ -65,15 +65,16 @@ public class ListOfArticles extends AppCompatActivity {
         Intent intent = getIntent();
         int categoryID = intent.getIntExtra("categoryID",0);
 
-        if(categoryID == 3) {
-            PATH = "Category_Information/Symptoms/article";
-        } else if (categoryID == 2) {
-            PATH = "Category_Information/Communicating/article";
-        } else if (categoryID == 1) {
-            PATH = "Category_Information/Dealing/article";
-        } else {
-            Toast.makeText(this, "Error occured, category ID not found", Toast.LENGTH_SHORT).show();
-        }
+        PATH = "Category_Information/Chapter "+categoryID+"/article";
+//        if(categoryID == 3) {
+//            PATH = "Category_Information/Symptoms/article";
+//        } else if (categoryID == 2) {
+//            PATH = "Category_Information/Chapter 1/article";
+//        } else if (categoryID == 1) {
+//            PATH = "Category_Information/Dealing/article";
+//        } else {
+//            Toast.makeText(this, "Error occured, category ID not found", Toast.LENGTH_SHORT).show();
+//        }
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DementiaLearn</string>
+    <string name="app_name">AndroidLab</string>
 
     <string name="signup">SIGN UP</string>
     <string name="signin">SIGN IN</string>

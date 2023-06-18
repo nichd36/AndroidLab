@@ -63,7 +63,7 @@ public class QuizResult extends AppCompatActivity {
         final TextView wrongAnswer = findViewById(R.id.wrongtext);
         final int getCorrectAnswer = getIntent().getIntExtra("correct", 0);
         final int getIncorrectAnswer = getIntent().getIntExtra("incorrect", 0);
-        final int getID = getIntent().getIntExtra("id", 1);
+        final int getID = getIntent().getIntExtra("id", 0);
 
         bmp = BitmapFactory.decodeResource(getResources(), R.drawable.icon);
         scaledbmp = Bitmap.createScaledBitmap(bmp, 40, 40, false);
@@ -77,7 +77,7 @@ public class QuizResult extends AppCompatActivity {
         String uid = user.getUid();
 
         DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("User").child(uid+"/progress/"+ String.valueOf(getID));
-        dbRef.child("id").setValue(String.valueOf(String.valueOf(getID)));
+        dbRef.child("id").setValue(String.valueOf(getID));
         dbRef.child("score").setValue(String.valueOf(getCorrectAnswer));
 
         backToHomepage.setOnClickListener(new View.OnClickListener() {
@@ -126,7 +126,7 @@ public class QuizResult extends AppCompatActivity {
         title.setTextAlign(Paint.Align.CENTER);
 
         title.setColor(ContextCompat.getColor(this, R.color.black));
-        canvas.drawText("CONGRATULATION", 400, 100, title);
+        canvas.drawText("CONGRATULATIONS", 400, 100, title);
 
         title.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         title.setColor(ContextCompat.getColor(this, R.color.blue));

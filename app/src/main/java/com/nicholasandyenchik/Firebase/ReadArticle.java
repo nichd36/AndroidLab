@@ -55,7 +55,7 @@ public class ReadArticle extends AppCompatActivity {
             }
         });
 
-        int index = getIntent().getIntExtra("index", 0) +1;
+        int index = getIntent().getIntExtra("index", 0);
 
         title = findViewById(R.id.newtitle);
         String judul = getIntent().getStringExtra("title");

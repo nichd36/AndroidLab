@@ -3,7 +3,6 @@ package com.nicholasandyenchik.Firebase;
 public class Bookmark {
     private String bookmarked;
     private String id;
-
     public Bookmark() {
     }
 

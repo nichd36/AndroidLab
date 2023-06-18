@@ -37,7 +37,7 @@ public class Quiz extends AppCompatActivity {
     private TextView option1,option2,option3,option4;
     private TextView nextBtn;
     private List<QuestionsList> questionsListList = new ArrayList<>();
-    private int currentQuestionPosition, index = 0;
+    private int currentQuestionPosition, articleIndex, index = 0;
     private String selectedOptionByUser = "";
     int correctAnswer;
     int realAnswer;
@@ -107,21 +107,19 @@ public class Quiz extends AppCompatActivity {
                 nextBtn = findViewById(R.id.next);
 
                 index = getIntent().getIntExtra("index", 1001);
-                int indexes = 0;
-                String category = "";
 
-                if(index < 2001 && index > 1000){
-                    category = "Communicating";
-                    indexes = index - 1001;
-                } else if(index < 3001 && index > 2000){
-                    category = "Dealing";
-                    indexes = index - 2001;
-                } else if(index < 4001 && index > 3000){
-                    category = "Symptoms";
-                    indexes = index - 3001;
+                int category = 0;
+                int articleIndex = index;
+
+                while(index != 0) {
+                    category = index % 10;
+                    index = index / 10;
                 }
 
-                String PATH = "Category_Information/" + category + "/article/" + indexes +"/quiz";
+                int articleID = articleIndex - (category*(1000));
+
+                String PATH = "Category_Information/Chapter " + category + "/article/" + articleID +"/quiz";
+//                Toast.makeText(Quiz.this, PATH, Toast.LENGTH_SHORT).show();
 
                 DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference(PATH);
                 dbRef.addValueEventListener(new ValueEventListener() {
@@ -281,10 +279,13 @@ public class Quiz extends AppCompatActivity {
             option3.setText(questionsListList.get(currentQuestionPosition).getOpt3());
             option4.setText(questionsListList.get(currentQuestionPosition).getOpt4());
         }
-        else{
+        else
+        {
+            Toast.makeText(Quiz.this, String.valueOf(getIntent().getIntExtra("index", 1001)), Toast.LENGTH_SHORT).show();
+
             Intent intent = new Intent(Quiz.this, QuizResult.class);
             intent.putExtra("topic", getIntent().getStringExtra("title"));
-            intent.putExtra("id", index-1);
+            intent.putExtra("id", getIntent().getIntExtra("index", 1001));
             intent.putExtra("correct", getCorrectAnswers());
             intent.putExtra("incorrect", getIncorrectAnswers());
 

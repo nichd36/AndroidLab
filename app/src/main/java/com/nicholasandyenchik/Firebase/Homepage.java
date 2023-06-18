@@ -41,6 +41,7 @@ import android.Manifest;
 
 public class Homepage extends AppCompatActivity {
     private RecyclerView categoryRV;
+    private int lastFirstVisiblePosition;
     private ArrayList<MainTopic> categoryArrayList;
     private ArrayList<ScoreList> scoreListArrayList;
     private ArrayList<ArticleItem> articleItemArrayList;
@@ -110,8 +111,8 @@ public class Homepage extends AppCompatActivity {
                     snapHelper.attachToRecyclerView(categoryRV);
                 }
             });
+            setData();
         }
-
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -264,9 +265,7 @@ public class Homepage extends AppCompatActivity {
                 bookmarkedDbList.clear();
                 for(DataSnapshot snapshotB: snapshot.getChildren()) {
                     Bookmark book = snapshotB.getValue(Bookmark.class);
-                    if(Integer.valueOf(book.getBookmarked())==1){
                         bookmarkedDbList.add(book);
-                    }
                 }
 
                 if(bookmarkedDbList.isEmpty()){
@@ -283,49 +282,58 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
-        for(int i = 0; i<3; i++){
-            articleItemArrayList.clear();
-            String PATH = "";
-            if(i == 0){
-                PATH = "Category_Information/Communicating/article";
-            }else if(i == 1){
-                PATH = "Category_Information/Dealing/article";
-            }else if(i == 2){
-                PATH = "Category_Information/Symptoms/article";
-            }
+        dbRef = FirebaseDatabase.getInstance().getReference("Category_Information");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+                    MainTopic category = snapshot1.getValue(MainTopic.class);
+                    categoryArrayList.add(category);
+                }
 
-            dbRef = FirebaseDatabase.getInstance().getReference(PATH);
-            dbRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    for(DataSnapshot snapshot1: snapshot.getChildren()){
-                        ArticleItem articleItem = snapshot1.getValue(ArticleItem.class);
-                        for (int i = 0; i<bookmarkedDbList.size(); i++){
-                            if(TextUtils.equals(String.valueOf(articleItem.getId()), bookmarkedDbList.get(i).getId())){
-                                if(TextUtils.equals(bookmarkedDbList.get(i).getBookmarked(),"1")){
-                                    articleItemArrayList.add(articleItem);
+                articleItemArrayList.clear();
+                for (int i = 0; i < categoryArrayList.size(); i++) {
+                    String PATH = "";
+                    PATH = "Category_Information/Chapter " + i + "/article";
 
-                                    DataSnapshot snapshot2 = snapshot1.child("quiz");
-                                    Long count = snapshot2.getChildrenCount();
-                                    countArrayList.add(count);
+                    dbRef = FirebaseDatabase.getInstance().getReference(PATH);
+                    dbRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+                                ArticleItem articleItem = snapshot1.getValue(ArticleItem.class);
+                                for (int i = 0; i < bookmarkedDbList.size(); i++) {
+                                    if (TextUtils.equals(String.valueOf(articleItem.getId()), bookmarkedDbList.get(i).getId())) {
+                                        if (TextUtils.equals(bookmarkedDbList.get(i).getBookmarked(), "1")) {
+                                            articleItemArrayList.add(articleItem);
+
+                                            DataSnapshot snapshot2 = snapshot1.child("quiz");
+                                            Long count = snapshot2.getChildrenCount();
+                                            countArrayList.add(count);
+                                        }
+                                    }
                                 }
                             }
+                            ArticleListRVAdapter adapter = new ArticleListRVAdapter(Homepage.this, articleItemArrayList, scoreListArrayList, countArrayList);
+                            categoryRV.setAdapter(adapter);
+                            adapter.notifyDataSetChanged();
+
+                            if (homeBtn.isChecked()) {
+                                empty.setVisibility(View.GONE);
+                                setData();
+                            }
                         }
-                    }
-                    ArticleListRVAdapter adapter = new ArticleListRVAdapter(Homepage.this, articleItemArrayList, scoreListArrayList, countArrayList);
-                    categoryRV.setAdapter(adapter);
-                    adapter.notifyDataSetChanged();
 
+                        @Override
+                        public void onCancelled(@org.checkerframework.checker.nullness.qual.NonNull DatabaseError error) {
+                        }
+                    });
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-                    if(homeBtn.isChecked()){
-                        empty.setVisibility(View.GONE);
-                        setData();
-                    }
-                }
-                @Override
-                public void onCancelled(@org.checkerframework.checker.nullness.qual.NonNull DatabaseError error) {
-                }
-            });
-        }
+            }
+        });
     }
 }

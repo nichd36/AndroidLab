@@ -48,11 +48,10 @@ public class ArticleListRVAdapter extends RecyclerView.Adapter<ArticleListRVAdap
     @Override
     public void onBindViewHolder(@NonNull ArticleListRVHolder holder, int position) {
         holder.title.setText(articleItemArrayList.get(position).getTitle());
-//        holder.content.setText(articleItemArrayList.get(position).getContent());
         Picasso.get().load(articleItemArrayList.get(position).getImage()).fit().centerCrop().memoryPolicy(MemoryPolicy.NO_CACHE).into(holder.image);
 
         for(int i = 0; i<scoreListArrayList.size(); i++){
-            if( TextUtils.equals(Integer.toString(articleItemArrayList.get(position).getId()), scoreListArrayList.get(i).getId())) {
+            if(TextUtils.equals(Integer.toString(articleItemArrayList.get(position).getId()), scoreListArrayList.get(i).getId())) {
                 holder.progress.setText("Score: " + scoreListArrayList.get(i).getScore() + "/" + countArrayList.get(position));
                 holder.progress.setTextColor(ContextCompat.getColor(context, R.color.green_neon));
             }
@@ -93,6 +92,4 @@ public class ArticleListRVAdapter extends RecyclerView.Adapter<ArticleListRVAdap
             progress = itemView.findViewById(R.id.progress);
         }
     };
-
-
 }
