@@ -1,5 +1,5 @@
 # AndroidLab
-AndroidLab, based on DementiaLearn, with improved algorithm, your simple Android app development dictionary
+AndroidLab, an android app that teach you basic Android app development
 
 Created by:
 Wong Yen Chik and Nicholas Dylan
