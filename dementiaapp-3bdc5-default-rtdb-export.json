@@ -1,0 +1,245 @@
+{
+  "Category_Information": {
+    "Chapter 1": {
+      "article": [
+        null,
+        {
+          "content": "This is used to display text on the screen of an Android application.",
+          "id": 1001,
+          "image": "https://live.staticflickr.com/65535/52965998319_d094eb7b41_c.jpg",
+          "quiz": [
+            null,
+            {
+              "answer": "Display text",
+              "opt1": "Display image",
+              "opt2": "DIsplay video",
+              "opt3": "Display text",
+              "opt4": "Listen to user action",
+              "question": "What is the textview for?"
+            }
+          ],
+          "title": "Text View"
+        },
+        {
+          "content": "As the name implies, it is used to display images on the screen.",
+          "id": 1002,
+          "image": "https://live.staticflickr.com/65535/52965852101_0dc3038edb_c.jpg",
+          "quiz": [
+            null,
+            {
+              "answer": "Display image",
+              "opt1": "Display text",
+              "opt2": "Display sound",
+              "opt3": "Display image",
+              "opt4": "Decoration",
+              "question": "What is the Image View used for?"
+            }
+          ],
+          "title": "Image View"
+        },
+        {
+          "content": "This listens for clicks from the user and calls a method in the code for an appropriate responses.",
+          "id": 1003,
+          "image": "https://live.staticflickr.com/65535/52965853271_430cbde998_b.jpg",
+          "quiz": [
+            null,
+            {
+              "answer": "Listen for clicks from the user",
+              "opt1": "Listen for clicks from the user",
+              "opt2": "Display text",
+              "opt3": "Show image",
+              "opt4": "Decoration",
+              "question": "What is the function of button?"
+            }
+          ],
+          "title": "Button"
+        }
+      ],
+      "desc": "In this tutorial, you will learn different type of views in Android Studio",
+      "id": 1,
+      "image": "https://live.staticflickr.com/65535/52965846466_4b1cfc4d24_c.jpg",
+      "title": "Views in Android Studio"
+    },
+    "Chapter 2": {
+      "article": [
+        null,
+        {
+          "content": "A layout that arranges other views either horizontally in a single column or vertically in a single row. It can be decided by its attribute orientation.",
+          "id": 2001,
+          "image": "https://live.staticflickr.com/65535/52965260177_1f97d1d058_z.jpg",
+          "quiz": [
+            null,
+            {
+              "answer": "Arrange other view horizontally in a single column",
+              "opt1": "I don't know",
+              "opt2": "It is a layout",
+              "opt3": "Arrange other view horizontally in a single column",
+              "opt4": "Group all child in relative position",
+              "question": "What is linear layout?"
+            }
+          ],
+          "title": "Linear Layout"
+        },
+        {
+          "content": "It groups all its child in its relative positions, and it is very effective with performance level.",
+          "id": 2002,
+          "image": "https://live.staticflickr.com/65535/52966235450_d501ff5c4b_z.jpg",
+          "quiz": [
+            null,
+            {
+              "answer": "Group all child in its relative position",
+              "opt1": "Arrange other view horizontally in a single column",
+              "opt2": "I don't know",
+              "opt3": "Group all child in its relative position",
+              "opt4": "Is a layout",
+              "question": "What is relative layout?"
+            }
+          ],
+          "title": "Relative Layout"
+        }
+      ],
+      "desc": "In this tutorial, you will learn different type of view group in Android Studio",
+      "id": 2,
+      "image": "https://live.staticflickr.com/65535/52966300038_5895ac357b_b.jpg",
+      "title": "View group in Android Studio"
+    },
+    "Chapter 3": {
+      "article": [
+        null,
+        {
+          "content": "Screen size is physical measured along diagonal. The 4 general size are small, normal, large, extra large.",
+          "id": 3001,
+          "image": "https://live.staticflickr.com/65535/52959646778_b17f7a26d5_b.jpg",
+          "quiz": [
+            null,
+            {
+              "answer": "Physical measured along diagonal",
+              "opt1": "Attribute of activity element",
+              "opt2": "Number of pixel per inch",
+              "opt3": "Not sure",
+              "opt4": "Physical measured along diagonal",
+              "question": "What does screen size means?"
+            },
+            {
+              "answer": "4",
+              "opt1": "1",
+              "opt2": "2",
+              "opt3": "3",
+              "opt4": "4",
+              "question": "How many screen size are available in Android?"
+            }
+          ],
+          "title": "Size of Android device"
+        },
+        {
+          "content": "Screen Orientation also known as screen rotation, is the attribute of activity element in android.",
+          "id": 3002,
+          "image": "https://live.staticflickr.com/65535/52965244162_bcac03d336_z.jpg",
+          "quiz": [
+            null,
+            {
+              "answer": "Attribute of activity element",
+              "opt1": "Not sure",
+              "opt2": "Number of pixel per inch",
+              "opt3": "Attribute of activity element",
+              "opt4": "Physical measured along diagonal",
+              "question": "What is screen orientation?"
+            }
+          ],
+          "title": "Screen Orientation"
+        }
+      ],
+      "desc": "In this tutorial, you will learn the basic concept of Android user interface",
+      "id": 3,
+      "image": "https://live.staticflickr.com/65535/52965250512_6249526672_b.jpg",
+      "title": "Android User Interface Concept"
+    },
+    "Chapter 4": {
+      "article": [
+        null,
+        {
+          "content": "It is a real time database service. It can work on Android, IOS, and web applications.",
+          "id": 4001,
+          "image": "https://live.staticflickr.com/65535/52965859231_38af846bcb_c.jpg",
+          "quiz": [
+            null,
+            {
+              "answer": "Real time database",
+              "opt1": "Real time database",
+              "opt2": "Base of fire",
+              "opt3": "Framework",
+              "opt4": "Coding language",
+              "question": "What is firebase?"
+            }
+          ],
+          "title": "Firebase"
+        },
+        {
+          "content": "SharedPreferences is an API that allows you to read and write data.",
+          "id": 4002,
+          "image": "https://live.staticflickr.com/65535/52966004199_8ac16e600a_b.jpg",
+          "quiz": [
+            null,
+            {
+              "answer": "API that allow read and write data",
+              "opt1": "API that allow read and write data",
+              "opt2": "Coding language",
+              "opt3": "Framework",
+              "opt4": "Real time database",
+              "question": "What is SharedPreferences?"
+            }
+          ],
+          "title": "SharedPreferences"
+        }
+      ],
+      "desc": "In this tutorial, you will learn how to deal with data.",
+      "id": 4,
+      "image": "https://live.staticflickr.com/65535/52965993129_f59de6bd32_b.jpg",
+      "title": "Working with Data"
+    }
+  },
+  "User": {
+    "oRoqV2a19XeV4esOapqrVKFmWYn1": {
+      "bookmarked": {
+        "1002": {
+          "bookmarked": "1",
+          "id": "1002"
+        },
+        "1003": {
+          "bookmarked": "0",
+          "id": "1003"
+        },
+        "3001": {
+          "bookmarked": "0",
+          "id": "3001"
+        },
+        "3002": {
+          "bookmarked": "1",
+          "id": "3002"
+        },
+        "4002": {
+          "bookmarked": "1",
+          "id": "4002"
+        }
+      },
+      "progress": {
+        "0": {
+          "id": "0",
+          "score": "1"
+        },
+        "1001": {
+          "id": "1001",
+          "score": "0"
+        },
+        "1002": {
+          "id": "1002",
+          "score": "1"
+        },
+        "-1": {
+          "id": "-1",
+          "score": "1"
+        }
+      }
+    }
+  }
+}
