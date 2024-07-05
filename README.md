@@ -6,7 +6,7 @@ AndroidLab, an Android app that allows you to learn the basics of Android app de
 ## Features
 ### Quiz Module
 - Play interactive quizzes covering various topics and subjects.
-- Track progress and performance with score reports.
+- Track progress and performance with score reports..
 
 ### Article Section
 - Read educational articles on diverse topics to enhance knowledge and understanding of basic Android development.
